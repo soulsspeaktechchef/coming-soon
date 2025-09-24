@@ -1,0 +1,322 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: linear-gradient(135deg, #f5f3ef 0%, #e1d9cb 100%);
+  color: #2c3e50;
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.container {
+  /* max-width: 1400px; */
+  margin: 0 auto;
+  padding: 0 200px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-content {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 60px;
+  align-items: center;
+  width: 100%;
+  max-width: 1440px;
+}
+
+.visual-section {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.meditation-frame {
+  width: 350px;
+  height: 470px;
+  background: linear-gradient(145deg, #2c3e50 0%, #34495e 100%);
+  border-radius: 50px 50px 20px 20px;
+  position: relative;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.meditation-frame::before {
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+  border: 2px solid #d4af37;
+  border-radius: 30px 30px 10px 10px;
+  z-index: 2;
+}
+
+.portrait-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 420px;
+  object-fit: cover;
+  border-radius: 25px 25px 8px 8px;
+  z-index: 3;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.content-section {
+  padding: 40px 0;
+}
+
+.coming-soon-badge {
+  background: #e9ecef;
+  color: #6c757d;
+  padding: 8px 20px;
+  border-radius: 25px;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: inline-block;
+  margin-bottom: 30px;
+}
+
+.main-title {
+  font-family: "Playfair Display", serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.main-title .highlight {
+  color: #d4af37;
+  position: relative;
+}
+
+.main-title .highlight::after {
+  content: "";
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: #d4af37;
+  border-radius: 2px;
+}
+
+.subtitle {
+  font-size: 1.3rem;
+  color: #6c757d;
+  margin-bottom: 30px;
+  font-weight: 300;
+}
+
+.description {
+  font-size: 1.1rem;
+  color: #495057;
+  margin-bottom: 40px;
+  line-height: 1.8;
+}
+
+.contact-section {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  margin-bottom: 30px;
+}
+
+.contact-title {
+  font-family: "Playfair Display", serif;
+  font-size: 1.5rem;
+  color: #2c3e50;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1rem;
+  color: #495057;
+}
+
+.contact-item a {
+  color: #2c3e50;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.contact-item a:hover {
+  color: #d4af37;
+}
+
+.contact-icon {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: #d4af37;
+}
+
+.signature {
+  font-family: "Playfair Display", serif;
+  font-size: 1.2rem;
+  color: #2c3e50;
+  font-style: italic;
+  text-align: right;
+  margin-top: 30px;
+}
+
+.signature .name {
+  color: #d4af37;
+  font-weight: 600;
+}
+
+.spiritual-elements {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.spiritual-element {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: #d4af37;
+  border-radius: 50%;
+  opacity: 0.3;
+  animation: twinkle 8s ease-in-out infinite;
+}
+
+.spiritual-element:nth-child(1) {
+  top: 20%;
+  left: 10%;
+  animation-delay: 0s;
+}
+.spiritual-element:nth-child(2) {
+  top: 40%;
+  right: 15%;
+  animation-delay: 2s;
+}
+.spiritual-element:nth-child(3) {
+  bottom: 30%;
+  left: 20%;
+  animation-delay: 4s;
+}
+.spiritual-element:nth-child(4) {
+  top: 60%;
+  left: 80%;
+  animation-delay: 6s;
+}
+.spiritual-element:nth-child(5) {
+  bottom: 20%;
+  right: 30%;
+  animation-delay: 1s;
+}
+
+@keyframes gentle-pulse {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.05);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(-20px);
+    opacity: 1;
+  }
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.5);
+  }
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .main-title {
+    font-size: 2.5rem;
+  }
+
+  .meditation-frame {
+    width: 280px;
+    height: 360px;
+  }
+
+  .portrait-image {
+    width: 220px;
+    height: 280px;
+  }
+
+  .container {
+    padding: 20px;
+  }
+
+  .contact-section {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-title {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1.1rem;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+}
